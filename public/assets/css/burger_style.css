@@ -1,0 +1,33 @@
+.burger{
+    font-family: 'Monoton', cursive;
+    text-align: center
+}
+
+.words{
+    font-family: 'Trocchi', serif;
+    text-align: center;
+}
+
+.answer{
+    font-family: 'Gravitas One', cursive;
+    text-align: center;
+}
+
+.center{
+    text-align: center;
+}
+
+.burgerpic{
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+.clear{clear: both;}

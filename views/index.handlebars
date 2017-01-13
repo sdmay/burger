@@ -1,25 +1,39 @@
-<h1>Eat a Burger</h1>
+<div class="row">
+  <div class="col-md-6"> 
+  <h2 class="words">You have CREATED:</h2>
 
-<ul>
+
+<ul class="list-group center">
   {{#each burgers}}
-    <li>
+    <li class="list-group-item answer">
       <p>
-        {{id}}. {{burger_name}}
+          <!--{{id}}. -->
+        {{burger_name}}
 
-        <form action="/delete?_method=DELETE" method="POST">
+        <form action="/update?_method=PUT" method="POST">
           <input type="hidden" name="id" value="{{id}}">
-          <button type="submit">Devour!</button>
+          <button type="submit" class="btn btn-danger"  id="devour">Devour!</button>
         </form>
       </p>
     </li>
   {{/each}}
 </ul>
 
-<h2>Create a Burger!</h2>
+</div>
+<div class="col-md-6">
+    <h2 class="words">You have DEVOURED:</h2>
+
+    </div>
+
+
+
+<div class = "center clear">
+<h2 class="words">Create a Burger!</h2>
 <form method="POST" action="/create" class="button-size">
 	<textarea type="text" name="burger"></textarea>
-	<button type="submit">Make Burger!</button>
+	<button type="submit" class="btn btn-primary words">Make Burger!</button>
 </form>
+</div>
 <!--
 <h2>Update a Movie</h2>
 <form action="/update?_method=PUT" method="POST" class="button-size">
@@ -27,3 +41,20 @@
 	<textarea type="text" name="movie" placeholder="plan"></textarea>
 	<button type="submit">Update Plan!</button>
 </form>-->
+</div>
+
+<script>
+$("#devour").on("click", ()=>{
+    $.ajax({
+            url: "/update",
+            type: "UPDATE",
+            data: {uid: 12341234}, //this sends the user-id to php as a post variable, in php it can be accessed as $_POST['uid']
+            success: function(data){
+                data = JSON.parse(data);
+                //update some fields with the updated data
+                //you can access the data like 'data["driver"]'
+            }
+        });
+})
+
+</script>

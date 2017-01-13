@@ -39,7 +39,8 @@ connection.connect(function(err) {
 });
 
 app.get("/", function(req, res) {
-  connection.query("SELECT * FROM burgers;", function(err, data) {
+    var query = "SELECT * FROM burgers";
+  connection.query(query, function(err, data) {
     if (err) {
       throw err;
     }
@@ -49,9 +50,39 @@ app.get("/", function(req, res) {
   });
 });
 
+// app.get("/", function(req, res) {
+//     var query = "SELECT * FROM burgers WHERE devoured = ?";
+//   connection.query(query, [!0], function(err, data) {
+//     if (err) {
+//       throw err;
+//     }
+
+//     res.render("index", { devoured: data });
+
+//   });
+// });
+
+
 app.post("/create", function(req, res) {
   connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [req.body.burger], function(err, result) {
+    //   var n = req.body.burger;
+    //   if(n = " "){
+    //       alert("Make a burger")
+    //       return false;
+    //   }
+    if (err) {
+      throw err;
+    }
 
+    res.redirect("/");
+  });
+});
+
+app.put("/update", function(req, res) {
+
+  connection.query("UPDATE burgers SET devoured = ? WHERE id = ?", [
+    1, req.body.this.id
+  ], function(err, result) {
     if (err) {
       throw err;
     }
