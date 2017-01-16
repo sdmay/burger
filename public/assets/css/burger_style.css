@@ -11,6 +11,7 @@
 .answer{
     font-family: 'Gravitas One', cursive;
     text-align: center;
+    
 }
 
 .center{
@@ -31,3 +32,7 @@
   zoom: 1;
 }
 .clear{clear: both;}
+
+.coloring{
+    background-color: #e0da5b;
+}
