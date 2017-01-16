@@ -77,9 +77,21 @@ var orm = {
 
       cb(result);
     });
-}
-}
+},
 
+  delete: (table, condition, cb)=>{
+    var queryString = "DELETE FROM ?? WHERE ?? "
 
+    console.log(queryString);
+    connection.query(queryString, [table, condition], function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  }
+
+};
 
 module.exports = orm;

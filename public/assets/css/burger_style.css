@@ -10,6 +10,17 @@ position: relative;
 .words{
     font-family: 'Trocchi', serif;
     text-align: center;
+ 
+}
+
+.createbutton {
+       background-color: #36b733;
+        border-color: #fa1db8;
+}
+.createbutton:hover, .createbutton:focus, .createbutton:active, .createbutton.active {
+    color: #fff;
+    background-color: black;
+    border-color: red /*set the color you want here*/
 }
 
 .answer{

@@ -42,4 +42,12 @@ router.put("/burgers/update/:id", function (req, res) {
     });
 });
 
+router.delete("/burgers/delete", function(req, res){
+//   var condition = {devoured : 1}
+
+//   console.log("condition", condition);
+  burger.delete("devoured = 1")
+  res.redirect("/burgers")
+})
+
 module.exports = router;
