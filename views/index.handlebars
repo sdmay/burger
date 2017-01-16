@@ -7,11 +7,12 @@
             {{#unless devoured}}
             <li class="list-group-item answer">
                 <p>
-                    {{burger_name}}
+                    
 
                     <form action="burgers/update/{{id}}?_method=PUT" method="POST">
                         <input type="hidden" name="id" value="{{id}}">
-                        <button type="submit" class="btn btn-danger" id="{{id}}">Devour!</button>
+                        
+                       {{burger_name}} <button type="submit" class="btn btn-danger" id="{{id}}">Devour!</button>
                     </form>
                 </p>
             </li>

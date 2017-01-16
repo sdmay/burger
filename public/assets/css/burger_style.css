@@ -3,6 +3,10 @@
     text-align: center
 }
 
+.inline{display: inline;
+position: relative;
+        }
+
 .words{
     font-family: 'Trocchi', serif;
     text-align: center;
@@ -11,6 +15,7 @@
 .answer{
     font-family: 'Gravitas One', cursive;
     text-align: center;
+    background-color: #e8f947;
     
 }
 
