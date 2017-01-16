@@ -6,9 +6,7 @@
             {{#each burgers}}
             {{#unless devoured}}
             <li class="list-group-item answer">
-                <p>
-                    
-
+                <p>                 
                     <form action="burgers/update/{{id}}?_method=PUT" method="POST">
                         <input type="hidden" name="id" value="{{id}}">
                         
@@ -38,5 +36,4 @@
 <button type="submit" class="btn btn-danger delete" id="delete">Clear Devoured!</button>
         </form>-->
     </div>
-
 </div>

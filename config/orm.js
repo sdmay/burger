@@ -30,16 +30,11 @@ var orm = {
       if (err) {
         throw err;
       }
-      console.log(result);
       cb(result)
     });
   },
   create: function(values, cb) {
-
     var queryString = "INSERT INTO burgers (burger_name) VALUES (?)";
-
-    console.log(queryString);
-
     connection.query(queryString, [values], function(err, result) {
       if (err) {
         throw err;
@@ -47,29 +42,12 @@ var orm = {
       cb(result);
     });
   },
-  //   update: function(condition, cb) {
-  //   var queryString = "UPDATE burgers SET devoured = 1 WHERE id = ?" + condition;
-  //   // var condition = req.body.id;
-  //   // console.log(condition)
-  //   console.log(queryString);
-  //   connection.query(queryString, function(err, result) {
-  //     if (err) {
-  //       throw err;
-  //     }
-
-  //     cb(result);
-  //   });
-      
-  // }
   update: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
-
     queryString += " SET ";
     queryString += objToSql(objColVals);
     queryString += " WHERE ";
     queryString += condition;
-
-    console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
@@ -81,17 +59,13 @@ var orm = {
 
   delete: (table, condition, cb)=>{
     var queryString = "DELETE FROM ?? WHERE ?? "
-
-    console.log(queryString);
     connection.query(queryString, [table, condition], function(err, result) {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   }
-
 };
 
 module.exports = orm;

@@ -8,8 +8,6 @@ var burger = {
   },
 
   create: function(values, cb) {
-      
-      console.log(values)
     orm.create(values, function(res) {
       cb(res);
     });
@@ -25,8 +23,6 @@ var burger = {
       cb(res)
     })
   }
-
-
 }
 
 module.exports = burger;
